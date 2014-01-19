@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<script type="text/javascript">
+
+var monthtext=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
+
+function populatedropdown(dayfield, monthfield, yearfield){
+var today=new Date()
+var dayfield=document.getElementById(dayfield)
+var monthfield=document.getElementById(monthfield)
+var yearfield=document.getElementById(yearfield)
+for (var i=0; i<31; i++)
+dayfield.options[i]=new Option(i, i+1)
+dayfield.options[today.getDate()]=new Option(today.getDate(), today.getDate(), true, true) //select today's day
+for (var m=0; m<12; m++)
+monthfield.options[m]=new Option(monthtext[m], monthtext[m])
+monthfield.options[today.getMonth()]=new Option(monthtext[today.getMonth()], monthtext[today.getMonth()], true, true) //select today's month
+var thisyear=today.getFullYear()
+for (var y=0; y<20; y++){
+yearfield.options[y]=new Option(thisyear, thisyear)
+thisyear+=1
+}
+yearfield.options[0]=new Option(today.getFullYear(), today.getFullYear(), true, true) //select today's year
+}
+
+function populatetimedropdown(arrival, last) {
+var date = new Date()
+var now = d.getHour() + d.getMinutes;
+
+
+}
+
+window.onload=function(){
+populatedropdown("dayfield", "monthfield", "yearfield")
+}
+
+var time = new Date().getTime();
+
+var hours = time.getHours();
+
+alert(hours);
+
+
+</script>
+</head>
+<body>
+<form method="post" action="opendiners_functions.php" name="open-diners-form" id="open_diners_form">
+<pre>
+Month:<select name="month" id="monthfield"></select><br/>
+Day:<select name="day" id="dayfield"></select>
+Year:<select name="year" id="yearfield"></select><br/>
+Arrival Time:<select>
+<option value="0000" selected >0000</option>
+<option value="0030">0030</option>
+<option value="0100">0100</option>
+<option value="0130">0130</option>
+<option value="0200">0200</option>
+<option value="0230">0230</option>
+<option value="0300">0300</option>
+<option value="0330">0330</option>
+<option value="0400">0400</option>
+<option value="0430">0430</option>
+<option value="0500">0500</option>
+<option value="0530">0530</option>
+<option value="0600">0600</option>
+<option value="0630">0630</option>
+<option value="0700">0700</option>
+<option value="0730">0730</option>
+<option value="0800">0800</option>
+<option value="0830">0830</option>
+<option value="0900">0900</option>
+<option value="0930">0930</option>
+<option value="1000">1000</option>
+<option value="1030">1030</option>
+<option value="1100">1100</option>
+<option value="1130">1130</option>
+<option value="1200">1200</option>
+<option value="1230">1230</option>
+<option value="1300">1300</option>
+<option value="1330">1330</option>
+<option value="1400">1400</option>
+<option value="1430">1430</option>
+<option value="1500">1500</option>
+<option value="1530">1300</option>
+<option value="1600">1600</option>
+<option value="1630">1630</option>
+<option value="1700">1700</option>
+<option value="1730">1730</option>
+<option value="1800">1800</option>
+<option value="1830">1830</option>
+<option value="1900">1900</option>
+<option value="1930">1930</option>
+<option value="2000">2000</option>
+<option value="2030">2030</option>
+<option value="2100">2100</option>
+<option value="2130">2130</option>
+<option value="2200">2200</option>
+<option value="2230">2230</option>
+<option value="2300">2300</option>
+<option value="2330">2330</option>
+</select><br/>
+Last Service:<select name="arrival-time" id="arrival_id">
+<option value="0000" selected >0000</option>
+<option value="0030">0030</option>
+<option value="0100">0100</option>
+<option value="0130">0130</option>
+<option value="0200">0200</option>
+<option value="0230">0230</option>
+<option value="0300">0300</option>
+<option value="0330">0330</option>
+<option value="0400">0400</option>
+<option value="0430">0430</option>
+<option value="0500">0500</option>
+<option value="0530">0530</option>
+<option value="0600">0600</option>
+<option value="0630">0630</option>
+<option value="0700">0700</option>
+<option value="0730">0730</option>
+<option value="0800">0800</option>
+<option value="0830">0830</option>
+<option value="0900">0900</option>
+<option value="0930">0930</option>
+<option value="1000">1000</option>
+<option value="1030">1030</option>
+<option value="1100">1100</option>
+<option value="1130">1130</option>
+<option value="1200">1200</option>
+<option value="1230">1230</option>
+<option value="1300">1300</option>
+<option value="1330">1330</option>
+<option value="1400">1400</option>
+<option value="1430">1430</option>
+<option value="1500">1500</option>
+<option value="1530">1300</option>
+<option value="1600">1600</option>
+<option value="1630">1630</option>
+<option value="1700">1700</option>
+<option value="1730">1730</option>
+<option value="1800">1800</option>
+<option value="1830">1830</option>
+<option value="1900">1900</option>
+<option value="1930">1930</option>
+<option value="2000">2000</option>
+<option value="2030">2030</option>
+<option value="2100">2100</option>
+<option value="2130">2130</option>
+<option value="2200">2200</option>
+<option value="2230">2230</option>
+<option value="2300">2300</option>
+<option value="2330">2330</option>
+</select><br/>
+Location:<input type="text" value="Address" name="first-name" id="first_name"/><br/>
+Menu:<input type="text" value="e.g. soup, roast beef, followed by bread pussing" name="menu" id="men_u"/><br/>
+Price:<input type="text" value="e.g. $10.00" name="price" id="price_e"/>
+<input type="submit" value="Create Event" name="submit-button" id="submit_button"/>
+</pre>
+</form>
+</body>
+</html>
